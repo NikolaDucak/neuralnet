@@ -154,11 +154,10 @@ void feed(const std::string &file_name, const std::string &input_vector_str) {
 
     auto output_vector = nn.feed_forward(input_vector);
 
+    static const std::string delimiter = " | ";
     std::stringstream ss;
     std::copy(output_vector.data(), output_vector.data() + output_vector.size(),
-              std::ostream_iterator<float>(ss, " | "));
-    auto output_str = ss.str();
-    output_str.pop_back(); // erase trailing '-' delimiter
+              std::ostream_iterator<float>(ss, delimiter.c_str()));
+    auto output_str = ss.str().substr(0, (ss.str().size()) - delimiter.size());
     std::cout << output_str << std::endl;
-
 }
