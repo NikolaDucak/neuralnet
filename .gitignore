@@ -1,0 +1,7 @@
+# ignore vim files
+*.swp
+*.swo
+#ignore build and object file dirs
+obj/
+build/
+cmake-build-debug/
