@@ -11,7 +11,7 @@ nncli file_name <command> <arguments>
 commands:
     make:  generates a neural net & serializes it to file_name
         argument: m_topology of neural net in format "num;num;num"
-        eg. nncli make net.nn 1-2-3-4
+        eg. nncli net.nn make 1-2-3-4
 
     train: deserializes network, trains it & serializes it
         arguments:
