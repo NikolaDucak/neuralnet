@@ -158,7 +158,7 @@ void neural_net::serialize(const neural_net &nn, const std::string& file_path) {
     std::ofstream ofs(file_path, std::ios_base::out);
 
     if(not ofs.is_open()) {
-        throw std::runtime_error(std::string{"nnlib: cant open file"} + file_path);
+        throw std::runtime_error(std::string{"[nnlib] cant open file "} + file_path);
     } else {
         boost::archive::binary_oarchive oa(ofs);
         oa << nn;
@@ -171,7 +171,7 @@ neural_net neural_net::deserialize(const std::string& file_path) {
     std::ifstream ifs(file_path, std::ios_base::in);
 
     if(not ifs.is_open()) {
-        throw std::runtime_error(std::string{"nnlib: cant open file"} + file_path);
+        throw std::runtime_error(std::string{"[nnlib] cant open file: "} + file_path);
     } else {
         boost::archive::binary_iarchive ia(ifs);
         ia >> nn;
