@@ -39,7 +39,10 @@ static void train(const std::string &file_name, const char* argv[]);
 static void feed(const std::string &file_name, const std::string &input_vector_str);
 
 int main(int argc, const char *argv[]) {
-    if (argc < 4) {
+    if (argc == 2 && !std::strcmp(argv[1], "help")) {
+        std::cout << usage << std::endl;
+        return 0;
+    } else if (argc < 4){
         std::cout << "Oops! Bad number of arguments! \n"
                   << "See `nncli help'." << std::endl;
         return 1;
@@ -55,8 +58,6 @@ int main(int argc, const char *argv[]) {
         }
     } else if (not std::strcmp(argv[2], "feed")) {
         feed(argv[1], argv[3]);
-    } else if (not std::strcmp(argv[2], "help")) {
-        std::cout << usage << std::endl;
     } else {
         std::cout << "Unknown action: " << argv[2] << ". See 'nncli help'." << std::endl;
     }
