@@ -28,7 +28,17 @@ $ nncli test.nn make 2-3-1
 
 Created test.nn with 2-3-1 m_topology.
 
-$ nncli test.nn train example_dataset/xor.tre
+$ nncli test.nn train example_dataset/xor.tre 1000 100 2.5
+
+Starting training with:
+        net: net.nn
+        dataset: ../example_dataset/xor.tre
+        epochs: 1000
+        batch size: 100
+        learning rate: 2.5
+        training set size:4
+        ....
+Finished!
 
 $ nncli test.nn feed 1-1
 0.028531
