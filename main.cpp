@@ -110,7 +110,7 @@ void make(const std::string &file_name, const std::string &topology_str) {
     neural_net nn{parse_vector<unsigned int>(topology_str)};
     neural_net::serialize(nn, std::string(file_name));
     std::cout << "Created: " << file_name
-              << " with m_topology " << topology_str
+              << " with topology " << topology_str
               << std::endl;
 }
 
